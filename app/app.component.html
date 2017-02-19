@@ -1,0 +1,34 @@
+<h1>Register winhost</h1>
+Email: <input [(ngModel)]="userModel.Email"><br/>
+User Name: <input [(ngModel)]="userModel.UserName"><br/>
+Password: <input [(ngModel)]="userModel.Password"><br/>
+Password Confirmation: <input [(ngModel)]="userModel.ConfirmPassword"><br/>
+First Name: <input [(ngModel)]="userModel.FirstName"><br/>
+Last Name:  <input [(ngModel)]="userModel.LastName"><br/>
+<button (click)="registerUser()">Register</button>
+<div *ngIf="registerResponse">token: {{token}}<br/>{{bulkUserData}}</div>
+
+
+<h1>Login (Get access_token)</h1>
+User Name:<input [(ngModel)]="username"><br/>
+Password: <input [(ngModel)]="password"><br/>
+<button (click)="login()">Login</button>
+<div *ngIf="loginResponse">Token Response: {{loginResponse}}</div>
+(EmailConfirmed must be set first.)
+
+<h1>Change Password</h1>
+Old Password:<input [(ngModel)]="ch_oldPwd"><br/>
+New Password: <input [(ngModel)]="ch_newPwd"><br/>
+Cofirm Password: <input [(ngModel)]="ch_confirmPassword"><br/>
+<button (click)="changePassword()">Test Token</button>
+<div *ngIf="bulkPasswordChangeResponse">Password Change Response: 
+{{bulkPasswordChangeResponse}}</div>
+
+<h1>Get Users(For admins)</h1>
+<button (click)="getUsers()">Get Users</button>
+<div *ngIf="allUsersBulkResponse">All Users Response: 
+{{allUsersBulkResponse}}</div>
+
+<h1>Get User by User Name</h1>
+<input [(ngModel)]="userNameSearch"><br/>
+<button (click)="getUserByName(userNameSearch)">Get User by Name</button>
